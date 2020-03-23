@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+    crossorigin="anonymous"
+  />
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+    rel="stylesheet"
+  />
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body class="bg container-fluid">
+    <nav class="navbar">
+        <div class="navbar-brand">Weather Dashboard</div>
+    </nav>
+<main class="row">
+<aside class="col-sm-4 col-lg-3">
+    <h4>Search for a City:</h4>
+    <form class="input-group mb-4" id="search">
+        <input
+            type="text"
+            class="form-control"
+            placeholder="City"
+            id="searchEntry"
+        />
+        <div class="input-group-append">
+            <button class="btn btn-primary" type="submit" id="searchBtn">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </form>
+    <div class="btn-block btn-group-vertical" id="history"></div>
+
+</aside>
+
+<div class="col-sm-8 col-lg-9">
+    <div class="row container">
+        <h2 id="currentDay"></h2>
+    </div>
+    <section class="d-block card px-4 py-2 mb-3" id="today">
+        <h2 id="currentCity"></h2>
+        <p id="temp"></p>
+        <p id="humid"></p>
+        <p id="wind"></p>
+        <p id="uvindex"></p>
+    </section>
+    <section id="fiveDay">
+        <h3>5-day Forecast</h3>
+        <div class="row">
+            <div
+                class="card bg-primary text-white p-3 m-3"
+                style="width: 180px"
+                id="0"
+            ></div>
+            <div
+                class="card bg-primary text-white p-3 m-3"
+                style="width: 180px"
+                id="1"
+            ></div>
+            <div
+                class="card bg-primary text-white p-3 m-3"
+                style="width: 180px"
+                id="2"
+            ></div>
+            <div
+                class="card bg-primary text-white p-3 m-3"
+                style="width: 180px"
+                id="3"
+            ></div>
+            <div
+                class="card bg-primary text-white p-3 m-3"
+                style="width: 180px"
+                id="4"
+            ></div>
+        </div>
+    </section>
+
+</div>
+</main>
+
+
+    <footer>
+        <div class="clearfix container-fluid">
+            <span class="float-right">&copy;PSO Co. 2020</span>
+        </div>  
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
