@@ -14,7 +14,12 @@ $(document).ready(function(){
     forcast(city);
 
 })
-
+$('#searchbtn').on('click',function(){
+  event.preventDefault();
+  var newcity = $('#userentry').val();
+  console.log(newcity);
+  getinfo(newcity)
+})
 
 //ajax get weather info via API
 function getinfo(location){
