@@ -3,12 +3,12 @@
     background-size: cover;
   }
 
-.navbar{
-    background: rgba(255,255,255,0.3);
+.navbar, #today{
+    background: rgba(255,255,255,0.2);
     margin-bottom: 1em;
     
 }
-.navbar-brand{
+.navbar-brand, #currentCity{
     color: white;
     
 }
@@ -17,6 +17,9 @@
 }
 aside{
     margin-top: 0.5em;
+}
+#uvi{
+    background-color: red;
 }
 footer{
     position:fixed;

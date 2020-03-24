@@ -4,20 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link
-    rel="stylesheet"
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-  />
-  <link
-    rel="stylesheet"
-    href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-    crossorigin="anonymous"
-  />
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
-    rel="stylesheet"
-  />
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" type="text/css" href="style.css">
 
 </head>
@@ -26,17 +24,17 @@
         <div class="navbar-brand">Weather Dashboard</div>
     </nav>
 <main class="row">
-<aside class="col-sm-4 col-lg-3">
+<aside class="col-sm-5 col-lg-3">
     <h4>Search for a City:</h4>
     <form class="input-group mb-4" id="search">
         <input
             type="text"
             class="form-control"
             placeholder="City"
-            id="searchEntry"
+            id="userentry"
         />
         <div class="input-group-append">
-            <button class="btn btn-primary" type="submit" id="searchBtn">
+            <button class="btn btn-primary" type="submit" id="searchbtn">
                 <i class="fas fa-search"></i>
             </button>
         </div>
@@ -45,42 +43,58 @@
 
 </aside>
 
-<div class="col-sm-8 col-lg-9">
+<div class="col-sm-7 col-lg-9">
     <div class="row container">
-        <h2 id="currentDay"></h2>
+        
     </div>
-    <section class="d-block card px-4 py-2 mb-3" id="today">
-        <h2 id="currentCity"></h2>
-        <p id="temp"></p>
-        <p id="humid"></p>
-        <p id="wind"></p>
-        <p id="uvindex"></p>
+    <section class="d-block px-4 py-2 mb-3" id="today">
+        <div class="row">
+            <div class="col-sm-4">
+                <h1 id="currentCity"></h1>
+                <p id="currentDay"></p>
+            </div>
+            <div class="col-sm-8">
+                <div id="desc"></div>
+                <div>Current Temperature: <span id="temp"></span></div>
+                <div>Humidity: <span id="humid"></span></div>
+                <div>Wind: <span id="wind"></span></div>
+                <div>UV Index: 
+                    <span class = "px-2"id="uvi"></span>
+                    <span class = "px-2"id="uvid"></span>
+                </div>
+                
+            </div>
+
+        </div>
+
+
+
     </section>
-    <section id="fiveDay">
-        <h3>5-day Forecast</h3>
+    <section class="container" id="fiveDay">
+        <h3>Forecast</h3>
         <div class="row">
             <div
-                class="card bg-primary text-white p-3 m-3"
+                class="card bg-primary text-white p-3 m-2"
                 style="width: 180px"
                 id="0"
             ></div>
             <div
-                class="card bg-primary text-white p-3 m-3"
+                class="card bg-primary text-white p-3 m-2"
                 style="width: 180px"
                 id="1"
             ></div>
             <div
-                class="card bg-primary text-white p-3 m-3"
+                class="card bg-primary text-white p-3 m-2"
                 style="width: 180px"
                 id="2"
             ></div>
             <div
-                class="card bg-primary text-white p-3 m-3"
+                class="card bg-primary text-white p-3 m-2"
                 style="width: 180px"
                 id="3"
             ></div>
             <div
-                class="card bg-primary text-white p-3 m-3"
+                class="card bg-primary text-white p-3 m-2"
                 style="width: 180px"
                 id="4"
             ></div>
@@ -96,7 +110,11 @@
             <span class="float-right">&copy;PSO Co. 2020</span>
         </div>  
     </footer>
-
+<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="script.js"></script>
