@@ -1,5 +1,9 @@
+*{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 .bg{ 
-    background: url(img/bgscreenshot.png) no-repeat center fixed; 
+    background: url(img/bgscreenshotnight.png) no-repeat center fixed; 
     background-size: cover;
   }
 
@@ -18,9 +22,7 @@
 aside{
     margin-top: 0.5em;
 }
-#uvi{
-    background-color: red;
-}
+
 footer{
     position:fixed;
     bottom: 0;

@@ -11,8 +11,6 @@ $(document).ready(function(){
     $('#currentDay').text(cday);
     
     getinfo(city);
-    //$('#currentCity').text(capitalisefst(city))
-    
     forcast(city);
 
 })
@@ -67,13 +65,18 @@ function getinfo(location){
             
   })
 }
+
+
 function displayinfo(obj,obj1){
   
   $('#currentCity').text(obj.name);
   var x = Math.round(obj.main.temp)
   $('#temp').text(x + ' °C');
   var y = obj.weather[0].description;
-  $('#desc').text(capitalisefst(y));
+  var z = obj.weather[0].icon;
+  var iconurl = 'http://openweathermap.org/img/wn/'+z+'.png';
+  $('#desc').text(obj.weather[0].main+" "+capitalisefst(y));
+  $('#wicon').attr('src',iconurl)
   $('#humid').text(obj.main.humidity + ' %');
   $('#wind').text(obj.wind.speed + ' m/s');
   
