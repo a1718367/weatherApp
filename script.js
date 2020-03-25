@@ -59,14 +59,15 @@ function getinfo(location){
           }).then(function(response) {
             console.log(response);
             var foreinfo = response;
-            console.log(foreinfo, typeof foreinfo);
+            // console.log(foreinfo, typeof foreinfo);
             
-            var date = foreinfo.list;
-            for(i=0;i<date.length;i++){
-              var x = date[i].dt;
-              var dateString = moment.unix(x).format('dddd, Do MMM YYYY');
-              console.log(dateString);
-            }
+            // var date = foreinfo.list;
+            // for(i=0;i<date.length;i++){
+            //   var x = date[i].dt;
+            //   var dateString = moment.unix(x).format('dddd, Do MMM YYYY');
+            //   console.log(dateString);
+            // }
+            displayforecast(foreinfo);
             
   })
 }
@@ -94,6 +95,26 @@ function displayinfo(obj,obj1){
   else if(q<=7 && q>=6){r.css('background-color','orange');s.text('High')}
   else if(q<=5 && q>=3){r.css('background-color','yellow');s.text('Moderate')}
   else if(q<=2 && q>=1){r.css('background-color','green');s.text('Low')}
+}
+
+function displayforecast(obj){
+  
+    var frarr = 8;
+    var fdate = obj.list[frarr].dt;
+    var dateString = moment.unix(fdate).format('dddd, Do MMM YYYY');
+    console.log(dateString);
+    var ftemp = obj.list[frarr].main.temp;
+    console.log(ftemp);
+    var ficon = obj.list[frarr].weather[0].icon;
+    var ficonurl = 'http://openweathermap.org/img/wn/'+ficon+'.png';
+    var fhumid = obj.list[frarr].main.humidity;
+
+    var fblock = $('<div class="fblock">');
+    var finfo = $('<div class="text-white">').text(dateString + ftemp+ fhumid);
+    $('#start').append(fblock);
+    fblock.append(finfo)
+
+  
 }
 
 
