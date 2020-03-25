@@ -7,10 +7,14 @@
     background-size: cover;
   }
 
-.navbar, #today, .fblock{
+.navbar, #today {
     background: rgba(255,255,255,0.2);
     margin-bottom: 1em;
     
+}
+
+.fblock{
+    background: rgba(31, 29, 29, 0.5);
 }
 .navbar-brand, #currentCity{
     color: white;

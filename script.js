@@ -5,7 +5,6 @@ var apikey ='5e799cbc4834793851ed4eb3fbe95228';
 
 
 
-
 $(document).ready(function(){
     var cday = moment().format('dddd, Do MMM YYYY');
     $('#currentDay').text(cday);
@@ -17,8 +16,11 @@ $(document).ready(function(){
 $('#searchbtn').on('click',function(){
   event.preventDefault();
   var newcity = $('#userentry').val();
+  
   console.log(newcity);
-  getinfo(newcity)
+  getinfo(newcity);
+  document.getElementById('start').innerHTML=""
+  forcast(newcity);
 })
 
 //ajax get weather info via API
@@ -59,14 +61,7 @@ function getinfo(location){
           }).then(function(response) {
             console.log(response);
             var foreinfo = response;
-            // console.log(foreinfo, typeof foreinfo);
             
-            // var date = foreinfo.list;
-            // for(i=0;i<date.length;i++){
-            //   var x = date[i].dt;
-            //   var dateString = moment.unix(x).format('dddd, Do MMM YYYY');
-            //   console.log(dateString);
-            // }
             displayforecast(foreinfo);
             
   })
@@ -105,7 +100,7 @@ function displayforecast(obj){
     var frarr = (i+1)*8;
     var fdate = obj.list[frarr].dt;
     var dateString = moment.unix(fdate).format('dddd, Do MMM YYYY');
-    var ftemp = obj.list[frarr].main.temp;
+    var ftemp = Math.round(obj.list[frarr].main.temp);
     var ficon = obj.list[frarr].weather[0].icon;
     var ficonurl = 'http://openweathermap.org/img/wn/'+ficon+'.png';
     var fhumid = obj.list[frarr].main.humidity;
@@ -119,8 +114,6 @@ function displayforecast(obj){
     finfo.append(fdtemp);
     fdtemp.append(fdhum);
     fdhum.append(fdicon);
-
-
 
   }
   
