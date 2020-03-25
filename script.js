@@ -11,7 +11,15 @@ $(document).ready(function(){
     
     getinfo(city);
     forcast(city);
+    displayhx(usersch);
 
+    $('.hxbtn').on('click',function(){
+      var btnclass = $(this).html();
+      getinfo(btnclass);
+      document.getElementById('start').innerHTML=""
+      forcast(btnclass);
+      
+    })
 })
 $('#searchbtn').on('click',function(){
   event.preventDefault();
@@ -21,6 +29,13 @@ $('#searchbtn').on('click',function(){
   getinfo(newcity);
   document.getElementById('start').innerHTML=""
   forcast(newcity);
+  hx();
+})
+
+$('#refreshBtn').on('click',function() {
+  localStorage.clear('userhx');
+  location.reload();
+
 })
 
 //ajax get weather info via API
@@ -61,7 +76,7 @@ function getinfo(location){
           }).then(function(response) {
             console.log(response);
             var foreinfo = response;
-            
+
             displayforecast(foreinfo);
             
   })
@@ -119,6 +134,25 @@ function displayforecast(obj){
   
 }
 
+function hx(){
+  const usrhx = $('#userentry').val();
+
+  //usersch.push(usrhx);
+  usersch.splice(0,0,usrhx);
+  usersch.splice(5)
+  localStorage.setItem("userhx",JSON.stringify(usersch));
+  displayhx(usersch);
+  $('#userentry').val("")
+  
+}
+
+function displayhx(usersch){
+  $('#history').html("");
+  for(j=0;j<usersch.length;j++){
+    var scrhx = $('<button type="button" class="hxbtn btn-block fblock text-white">').text(capitalisefst(usersch[j]));
+    $('#history').append(scrhx);
+  }
+}
 
   //Capitalise 1st letter
   function capitalisefst(string) {
