@@ -99,7 +99,10 @@ function displayinfo(obj,obj1){
 
 function displayforecast(obj){
   
-    var frarr = 8;
+
+  for(i=0;i<4;i++){
+
+    var frarr = (i+1)*8;
     var fdate = obj.list[frarr].dt;
     var dateString = moment.unix(fdate).format('dddd, Do MMM YYYY');
     console.log(dateString);
@@ -109,11 +112,18 @@ function displayforecast(obj){
     var ficonurl = 'http://openweathermap.org/img/wn/'+ficon+'.png';
     var fhumid = obj.list[frarr].main.humidity;
 
-    var fblock = $('<div class="fblock">');
-    var finfo = $('<div class="text-white">').text(dateString + ftemp+ fhumid);
+    var fblock = $('<div class="card fblock m-2">');
+    var finfo = $('<div class="text-white p-2">').text(dateString);
+    var fdtemp = $('<div class="text-white">').text("Temp: "+ftemp+" °C");
+    var fdhum = $('<div class="text-white">').text("Humidity: "+fhumid+" %");
     $('#start').append(fblock);
-    fblock.append(finfo)
+    fblock.append(finfo);
+    finfo.append(fdtemp);
+    fdtemp.append(fdhum);
 
+
+
+  }
   
 }
 
