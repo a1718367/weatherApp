@@ -67,7 +67,7 @@ function getinfo(location){
   }
 
   function uvi(lat, lon){
-    var queryURL = 'http://api.openweathermap.org/data/2.5/uvi?appid='+apikey+'&lat='+lat+'&lon='+lon;
+    var queryURL = 'https://api.openweathermap.org/data/2.5/uvi?appid='+apikey+'&lat='+lat+'&lon='+lon;
     $.ajax({
           url: queryURL,
           method: "GET"
