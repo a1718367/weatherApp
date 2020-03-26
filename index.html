@@ -41,7 +41,7 @@
     </form>
     <h5 class="text-white">Search History</h5>
     <div class="btn-block btn-group-vertical" id="history"></div>
-    <button class="btn-block" id="refreshBtn">Clear History</button>
+    <button class="btn-block mb-5" id="refreshBtn">Clear History</button>
 
 </aside>
 
@@ -51,29 +51,50 @@
     </div>
     <section class="d-block px-4 py-2 mb-3" id="today">
         <div class="row">
-            <div class="col-sm-4">
+            <div class="col-6 col-lg-4">
                 <h1 id="currentCity"></h1>
                 <p id="currentDay"></p>
-            </div>
-            <div class="col-sm-8">
-                
-                <div>
-                    <img src="" id="wicon" alt="Weather icon">
-                    <span id="desc"></span>
-                </div>
-                
-                <div>Current Temperature: <span id="temp"></span></div>
                 <div>Humidity: <span id="humid"></span></div>
                 <div>Wind: <span id="wind"></span></div>
                 <div>UV Index: 
                     <span class = "px-2"id="uvi"></span>
                     <span class = "px-2"id="uvid"></span>
                 </div>
-                
+            </div>
+            <div class="col-6 col-lg-8">
+                <div class="px-2"><span class="text-white" id="temp"></span></div>
+                <div>
+                    <img src="" id="wicon" alt="Weather icon">
+                    <span class="text-white" id="desc"></span>
+                </div>
+                   
             </div>
 
         </div>
-
+          <!-- The Modal -->
+          <div class="modal fade" id="mymodal">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+              
+                <!-- Modal Header -->
+                <div class="modal-header">
+                  <h4 class="modal-title"></h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <h4>Please Enter a City</h4>
+                </div>
+                
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+                
+              </div>
+            </div>
+          </div>
 
 
     </section>
@@ -95,10 +116,11 @@
     </footer>
 <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="script.js"></script>
 </body>

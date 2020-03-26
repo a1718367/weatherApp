@@ -12,17 +12,27 @@
     margin-bottom: 1em;
     
 }
+#temp{
+    font-size: 4em;
+    font-weight: lighter;
+}
+
+#desc{
+    font-size: 1.5em;
+}
 
 .fblock{
     background: rgba(31, 29, 29, 0.5);
 }
-.navbar-brand, #currentCity{
+.navbar-brand, 
+#currentCity,
+#currentDay, aside h4, section h3,
+#humid, #wind, #uvi
+{
     color: white;
     
 }
-#currentDay, aside h4, section h3{
-    color: white;
-}
+
 aside{
     margin-top: 0.5em;
 }
