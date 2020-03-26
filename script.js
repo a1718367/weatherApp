@@ -2,6 +2,7 @@
 var usersch = JSON.parse(localStorage.getItem("userhx")) || [];
 var city = 'adelaide';
 var apikey ='5e799cbc4834793851ed4eb3fbe95228';
+var key = "0959a518fd93cebc53ed34118e0e9471";
 
 
 
@@ -81,7 +82,7 @@ function getinfo(location){
 
 
   function forcast(location){
-    var queryURL = 'https://api.openweathermap.org/data/2.5/forecast?q='+location+'&units=metric&appid='+apikey
+    var queryURL = 'https://api.openweathermap.org/data/2.5/forecast?q='+location+'&units=metric&appid='+apikey;
     $.ajax({
           url: queryURL,
           method: "GET"
@@ -125,9 +126,9 @@ function displayuv(obj){
 function displayforecast(obj){
   
 
-  for(i=0;i<4;i++){
+  for(i=0;i<5;i++){
 
-    var frarr = (i+1)*8;
+    var frarr = (i*8+7);
     var fdate = obj.list[frarr].dt;
     var dateString = moment.unix(fdate).format('dddd, Do MMM YYYY');
     var ftemp = Math.round(obj.list[frarr].main.temp);
