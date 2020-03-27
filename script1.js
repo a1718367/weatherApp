@@ -5,9 +5,6 @@ var apikey ='5e799cbc4834793851ed4eb3fbe95228';
 var key = "0959a518fd93cebc53ed34118e0e9471";
 
 
-
-
-
 $(document).ready(function(){
     var cday = moment().format('dddd, Do MMM YYYY');
     $('#currentDay').text(cday);
@@ -40,7 +37,9 @@ $(document).ready(function(){
 
     $('#refreshBtn').on('click',function() {
         localStorage.clear('userhx');
-        location.reload();
+        usersch=[];
+        $('#history').html("");
+        //location.reload();
       
       })
 
