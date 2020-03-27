@@ -113,7 +113,8 @@ function forcast(location){
 
 function srchhx(city){
     var usrhx = city;
-    usersch.splice(0,0,usrhx);
+    var g = usersch.indexOf(usrhx);
+    if(g==-1){usersch.splice(0,0,usrhx);}
     usersch.splice(5)
     localStorage.setItem("userhx",JSON.stringify(usersch));
     displayhx(usersch);
@@ -191,8 +192,8 @@ function capitalisefst(string) {
     }
 
 function bg(now){
-    if(now>=6 && now<2){return "morning"}
-    else if(now>=2 && now<10){return "noon"}
-    else if(now>=10 && now<24){return "night"}
-    else{return "morning"}
+    if(now>=6 && now<14){return "morning"}
+    else if(now>=14 && now<20){return "noon"}
+    else if(now>=20 && now<24){return "night"}
+    else if(now>=0 && now<6){return "night"}
 }
