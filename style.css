@@ -2,10 +2,18 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.bg{ 
-    background: url(img/bgscreenshotnight.png) no-repeat center fixed; 
+.morning{ 
+    background: url(img/bgscreenshotmorning.png) no-repeat center fixed; 
     background-size: cover;
   }
+.noon{
+    background: url(img/bgscreenshot.png) no-repeat center fixed; 
+    background-size: cover;    
+}
+.night{
+    background: url(img/bgscreenshotnight.png) no-repeat center fixed; 
+    background-size: cover;
+}
 
 .navbar, #today {
     background: rgba(255,255,255,0.2);
@@ -27,7 +35,7 @@
 .navbar-brand, 
 #currentCity,
 #currentDay, aside h4, section h3,
-#humid, #wind, #uvi
+.info
 {
     color: white;
     
