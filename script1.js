@@ -7,6 +7,7 @@ var key = "0959a518fd93cebc53ed34118e0e9471";
 
 $(document).ready(function(){
     var cday = moment().format('dddd, Do MMM YYYY');
+    
     $('#currentDay').text(cday);
     var td = new Date();
     var nw = td.getHours();
@@ -78,6 +79,7 @@ function info(city){
             uvi(lat,lon);
             forcast(locale);
             srchhx(locale);
+            console.log(result)
                    
           },
           error: function(){
