@@ -126,7 +126,7 @@ function displayinfo(obj){
   
     $('#currentCity').text(obj.name);
     var x = Math.round(obj.main.temp)
-    $('#temp').text(x + ' °C');
+    $('#temp').text(x);// + ' °C'
     var y = obj.weather[0].description;
     var z = obj.weather[0].icon;
     var iconurl = 'http://openweathermap.org/img/wn/'+z+'.png';

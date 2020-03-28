@@ -21,13 +21,20 @@
     
 }
 #temp{
-    font-size: 4em;
+    font-size: 3.5em;
     font-weight: lighter;
 }
 
 #desc{
-    font-size: 1.5em;
+    font-size: 1.25em;
 }
+
+#deg{
+    font-size: 2em;
+    color: white;
+    font-weight: lighter;
+}
+
 
 .fblock{
     background: rgba(31, 29, 29, 0.5);
