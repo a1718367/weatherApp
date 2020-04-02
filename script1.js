@@ -125,15 +125,20 @@ function srchhx(city){
 function displayinfo(obj){
   
     $('#currentCity').text(obj.name);
+    $('#country').text(obj.sys.country)
     var x = Math.round(obj.main.temp)
     $('#temp').text(x);// + ' °C'
     var y = obj.weather[0].description;
     var z = obj.weather[0].icon;
     var iconurl = 'http://openweathermap.org/img/wn/'+z+'.png';
+    var sunrise = moment.unix(obj.sys.sunrise).format('hh:mm a');
+    var sunset = moment.unix(obj.sys.sunset).format('hh:mm a');
     $('#desc').text(capitalisefst(y));
     $('#wicon').attr('src',iconurl)
     $('#humid').text(obj.main.humidity + ' %');
     $('#wind').text(obj.wind.speed + ' m/s');
+    $('#sunr').text(sunrise);
+    $('#suns').text(sunset);
   }
 
 function displayuv(obj){

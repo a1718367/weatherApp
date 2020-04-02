@@ -1,5 +1,6 @@
 *{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white;
 }
 
 .morning{ 
@@ -30,22 +31,20 @@
 }
 
 #deg{
-    font-size: 2em;
-    color: white;
+    font-size: 2.5em;
     font-weight: lighter;
 }
-
+#country{
+    font-size: 25px;
+    font-weight: lighter;
+}
 
 .fblock{
     background: rgba(31, 29, 29, 0.5);
 }
-.navbar-brand, 
-#currentCity,
-#currentDay, aside h4, section h3,
-.info
-{
-    color: white;
-    
+
+#refreshBtn, #msg{
+    color: black;
 }
 
 aside{
